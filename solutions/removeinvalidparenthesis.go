@@ -15,9 +15,10 @@ func removeInvalidParentheses(s string) []string {
 	}
 	var open, close int
 	for _, c := range s {
-		if c == '(' {
+		switch c {
+		case '(':
 			open++
-		} else if c == ')' {
+		case ')':
 			if open == 0 {
 				close++
 			}

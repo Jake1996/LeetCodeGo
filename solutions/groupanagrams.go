@@ -1,6 +1,9 @@
 package solutions
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+)
 
 func groupAnagrams(strs []string) [][]string {
 	strMap := make(map[string][]string)
@@ -21,13 +24,13 @@ func sortedStr(s string) string {
 	for _, c := range s {
 		bi[c-'a']++
 	}
-	var outbi []byte
+	sb := strings.Builder{}
 	for i := range 26 {
 		for range bi[i] {
-			outbi = append(outbi, byte('a'+rune(i)))
+			sb.WriteByte(byte('a' + i))
 		}
 	}
-	return string(outbi)
+	return sb.String()
 }
 
 func GroupAnagrams() {

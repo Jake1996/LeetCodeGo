@@ -24,7 +24,7 @@ func (c *CombinationSum3Soln) helpercombsum3(start, j, k, target int, cur []int)
 	if target == 0 && j == k {
 		c.ans = append(c.ans, cur)
 	}
-	if start >= len(c.candidates) || target < 0 {
+	if start >= len(c.candidates) || target < 0 || j > k {
 		return
 	}
 

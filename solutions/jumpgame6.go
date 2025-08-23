@@ -5,6 +5,7 @@ import (
 	"fmt"
 )
 
+// https://leetcode.com/problems/jump-game-vi/description/
 func maxResult(nums []int, k int) int {
 	dequeue := list.New()
 

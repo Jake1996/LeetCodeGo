@@ -2,6 +2,7 @@ package solutions
 
 import "fmt"
 
+// https://leetcode.com/problems/gray-code/description/
 func grayCode(n int) []int {
 
 	if n == 1 {
