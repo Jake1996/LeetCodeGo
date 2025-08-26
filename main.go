@@ -3,5 +3,5 @@ package main
 import "LeetCodeGo/solutions"
 
 func main() {
-	solutions.LargestRectangleArea()
+	solutions.MaxCoins()
 }
