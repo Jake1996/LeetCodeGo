@@ -1,5 +1,10 @@
 package solutions
 
+import (
+	"container/heap"
+	"fmt"
+)
+
 type Item struct {
 	Value      int
 	Additional any
@@ -29,4 +34,19 @@ func (pq *PriorityQueue) Pop() any {
 	last := old[n-1]
 	*pq = old[0 : n-1]
 	return last
+}
+
+func TestPQ() {
+	p := &PriorityQueue{}
+	heap.Init(p)
+	heap.Push(p, &Item{Value: 1})
+	heap.Push(p, &Item{Value: 4})
+	heap.Push(p, &Item{Value: 3})
+	heap.Push(p, &Item{Value: 12})
+	heap.Push(p, &Item{Value: 6})
+	heap.Push(p, &Item{Value: 7})
+	fmt.Print(heap.Pop(p))
+	fmt.Print(heap.Pop(p))
+	fmt.Print(heap.Pop(p))
+	fmt.Print(heap.Pop(p))
 }
