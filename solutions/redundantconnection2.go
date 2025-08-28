@@ -21,9 +21,8 @@ func (r *Redundant2Soln) Parent(i int) int {
 	if r.parent[i] == i {
 		return i
 	}
-	pi := r.Parent(r.parent[i])
-	r.parent[i] = pi
-	return pi
+	r.parent[i] = r.Parent(r.parent[i])
+	return r.parent[i]
 }
 
 func findRedundantDirectedConnection(edges [][]int) []int {

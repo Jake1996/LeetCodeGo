@@ -11,8 +11,6 @@ type CriticalConnSoln struct {
 }
 
 // https://leetcode.com/problems/critical-connections-in-a-network/
-var ()
-
 func (cc *CriticalConnSoln) dfs(u, par int) {
 	cc.count++
 	cc.num[u] = cc.count
