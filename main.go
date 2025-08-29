@@ -1,6 +1,8 @@
 package main
 
-import "LeetCodeGo/solutions"
+import (
+	"LeetCodeGo/solutions"
+)
 
 func main() {
 	solutions.IsMatch()
