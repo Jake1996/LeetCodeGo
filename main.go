@@ -5,5 +5,5 @@ import (
 )
 
 func main() {
-	solutions.IsMatch()
+	solutions.LatestDayToCross()
 }
