@@ -69,4 +69,35 @@ func topKFrequent(nums []int, k int) []int {
 
 func TopKFrequent() {
 	fmt.Print(topKFrequent([]int{1, 2}, 2))
+	fmt.Print(topKFrequentAlternate([]int{1, 2}, 2))
+}
+
+func topKFrequentAlternate(nums []int, k int) []int {
+	lengthOfNums := len(nums)
+	if lengthOfNums == 1 || lengthOfNums == 0 {
+		return nums
+	}
+
+	counterMap := make(map[int]int)
+	for _, num := range nums {
+		counterMap[num]++
+	}
+
+	bucket := make([][]int, lengthOfNums)
+	result := []int{}
+
+	for index, uniqueCounter := range counterMap {
+		bucket[uniqueCounter-1] = append(bucket[uniqueCounter-1], index)
+	}
+	for i := lengthOfNums - 1; i >= 0; i-- {
+		if len(bucket[i]) > 0 {
+			result = append(result, bucket[i]...)
+
+		}
+		if len(result) == k {
+			break
+		}
+	}
+
+	return result
 }
