@@ -5,5 +5,5 @@ import (
 )
 
 func main() {
-	solutions.MinEatingSpeerd()
+	solutions.CanFinish()
 }
