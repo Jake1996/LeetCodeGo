@@ -5,5 +5,5 @@ import (
 )
 
 func main() {
-	solutions.LatestDayToCross()
+	solutions.MinEatingSpeerd()
 }
