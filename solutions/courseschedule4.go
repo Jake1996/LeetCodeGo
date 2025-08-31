@@ -17,6 +17,7 @@ func checkIfPrerequisite(numCourses int, prerequisites [][]int, queries [][]int)
 	for i := range numCourses {
 		preMap[i] = make(map[int]bool)
 	}
+	// List of Courses that can be taken once key course is complete
 	graph := make(map[int][]int)
 	for _, prereq := range prerequisites {
 		visited[prereq[1]]++

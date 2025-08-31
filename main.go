@@ -5,5 +5,5 @@ import (
 )
 
 func main() {
-	solutions.CanFinish()
+	solutions.ScheduleCourse()
 }

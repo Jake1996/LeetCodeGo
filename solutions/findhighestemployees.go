@@ -3,13 +3,12 @@ package solutions
 import (
 	"fmt"
 	"slices"
-	"strconv"
 )
 
 // https://leetcode.com/problems/high-access-employees/
 func findHighAccessEmployees(access_times [][]string) []string {
 	ret := make(map[string]bool)
-	empMap := make(map[string][]int64)
+	empMap := make(map[string][]int)
 	for _, at := range access_times {
 		empMap[at[0]] = append(empMap[at[0]], converToMin(at[1]))
 	}
@@ -30,11 +29,9 @@ func findHighAccessEmployees(access_times [][]string) []string {
 	return slice
 }
 
-func converToMin(t string) int64 {
-	hr, _ := strconv.ParseInt(t[0:2], 10, 32)
-	min, _ := strconv.ParseInt(t[2:], 10, 32)
-
-	return hr*60 + min
+func converToMin(t string) int {
+	return ((int(t[0]-'0')*10)+int(t[1]-'0'))*60 + // hours
+		((int(t[2]-'0') * 10) + int(t[3]-'0')) // min
 }
 
 func FindHighAccessEmployees() {

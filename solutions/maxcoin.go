@@ -24,6 +24,7 @@ func maxCoins(nums []int) int {
 		for left := 1; left <= n-length+1; left++ {
 			right := left + length - 1
 			for k := left; k <= right; k++ {
+				// Values from Left to k-1 and k+1 to right are already picked
 				curskill := arr[left-1] * arr[k] * arr[right+1]
 				dp[left][right] = max(dp[left][right], dp[left][k-1]+curskill+dp[k+1][right])
 			}
