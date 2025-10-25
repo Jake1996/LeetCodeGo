@@ -4,6 +4,7 @@ import (
 	"container/list"
 )
 
+// https://leetcode.com/problems/all-oone-data-structure/description/
 type Value struct {
 	val   string
 	count int
