@@ -3,6 +3,7 @@ package solutions
 import (
 	"container/list"
 	"fmt"
+	"maps"
 )
 
 // https://leetcode.com/problems/course-schedule-iv/description/
@@ -36,9 +37,7 @@ func checkIfPrerequisite(numCourses int, prerequisites [][]int, queries [][]int)
 			visited[node]--
 			hs := preMap[node]
 			hs[leaf] = true
-			for k := range preMap[leaf] {
-				hs[k] = true
-			}
+			maps.Copy(hs, preMap[leaf])
 			if visited[node] <= 0 {
 				leaves.PushBack(node)
 			}

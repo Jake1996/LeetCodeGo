@@ -5,6 +5,7 @@ import (
 	"slices"
 )
 
+// https://leetcode.com/problems/hand-of-straights/description/
 func isNStraightHand(hand []int, groupSize int) bool {
 	hmap := map[int]int{}
 	for _, num := range hand {
