@@ -6,10 +6,7 @@ import "fmt"
 func grayCode(n int) []int {
 
 	if n == 1 {
-		list := []int{}
-		list = append(list, 0)
-		list = append(list, 1)
-		return list
+		return []int{0, 1}
 	}
 
 	prev := grayCode(n - 1)
