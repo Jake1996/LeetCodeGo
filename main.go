@@ -5,5 +5,5 @@ import (
 )
 
 func main() {
-	solutions.ScheduleCourse()
+	solutions.NumBusesToDestination()
 }
