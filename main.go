@@ -5,5 +5,5 @@ import (
 )
 
 func main() {
-	solutions.NumBusesToDestination()
+	solutions.MyCalendarBook()
 }
