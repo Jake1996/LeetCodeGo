@@ -31,7 +31,7 @@ func (c *CombinationSum3Soln) helpercombsum3(start, j, k, target int, cur []int)
 
 	for i := start; i < len(c.candidates); i++ {
 		if c.candidates[i] <= target {
-			t := make([]int, len(cur))
+			t := make([]int, len(cur), len(cur)+1)
 			copy(t, cur)
 			t = append(t, c.candidates[i])
 			c.helpercombsum3(i+1, j+1, k, target-c.candidates[i], t)

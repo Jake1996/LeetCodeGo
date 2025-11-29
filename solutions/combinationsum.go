@@ -16,7 +16,7 @@ func combinationSum(candidates []int, target int) [][]int {
 	for _, c := range candidates {
 		for i := c; i <= target; i++ {
 			for _, ar := range dp[i-c] {
-				newSL := make([]int, len(ar))
+				newSL := make([]int, len(ar), len(ar)+1)
 				copy(newSL, ar)
 				newSL = append(newSL, c)
 				dp[i] = append(dp[i], newSL)

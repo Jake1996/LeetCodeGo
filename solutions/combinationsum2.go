@@ -22,6 +22,7 @@ func combinationSum2(candidates []int, target int) [][]int {
 func (c *CombinationSumSoln) helpercombsum2(candidates []int, start, target int, cur []int) {
 	if target == 0 {
 		c.ans = append(c.ans, cur)
+		return
 	}
 	if start >= len(candidates) || target < 0 {
 		return
@@ -32,7 +33,7 @@ func (c *CombinationSumSoln) helpercombsum2(candidates []int, start, target int,
 			continue
 		}
 		if candidates[i] <= target {
-			t := make([]int, len(cur))
+			t := make([]int, len(cur), len(cur)+1)
 			copy(t, cur)
 			t = append(t, candidates[i])
 			c.helpercombsum2(candidates, i+1, target-candidates[i], t)
