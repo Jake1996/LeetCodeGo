@@ -36,6 +36,14 @@ func (pq *PriorityQueue) Pop() any {
 	return last
 }
 
+func (pq PriorityQueue) Peek() *Item {
+	if len(pq) == 0 {
+		return nil
+	}
+	// The highest-priority item is always at index 0 of the slice.
+	return pq[0]
+}
+
 func TestPQ() {
 	p := &PriorityQueue{}
 	heap.Init(p)

@@ -13,10 +13,7 @@ func customSortString(order string, s string) string {
 	for i, c := range order {
 		orderMap[c] = i
 	}
-	st := []rune{}
-	for _, c := range s {
-		st = append(st, c)
-	}
+	st := []rune(s)
 	slices.SortFunc(st, func(a, b rune) int {
 		val1 := orderMap[a]
 		val2 := orderMap[b]
